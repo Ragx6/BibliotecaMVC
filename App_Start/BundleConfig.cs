@@ -2,6 +2,7 @@
 using System.Web.Optimization;
 
 namespace BibliotecaMVC.App_Start
+
 {
     public class BundleConfig
     {
