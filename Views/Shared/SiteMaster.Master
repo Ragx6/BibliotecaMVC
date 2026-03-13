@@ -10,9 +10,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="topbar" runat="server">
+            <a id ="lnkRegistrar" runat="server" href="~/Views/vistasBiblioteca/Registrar.aspx"></a>
+
+            <a id="lnkConsultar" runat="server" href="~/Views/vistasBiblioteca/Consultaraspx.aspx"></a>
+        </div>
+
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
         </div>
     </form>
 </body>
