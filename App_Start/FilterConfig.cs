@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace BibliotecaMVC
+namespace BibliotecaMVC.App_Start
 {
     public class FilterConfig
     {
