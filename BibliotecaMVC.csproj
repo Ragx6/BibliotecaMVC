@@ -131,6 +131,34 @@
     <Compile Include="Views\Shared\SiteMaster.Master.designer.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\vistasBiblioteca\Consultaraspx.aspx.cs">
+      <DependentUpon>Consultaraspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\Consultaraspx.aspx.designer.cs">
+      <DependentUpon>Consultaraspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\Eliminar.aspx.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\Eliminar.aspx.designer.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\Registrar.aspx.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\Registrar.aspx.designer.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\VerDetalle.aspx.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vistasBiblioteca\VerDetalle.aspx.designer.cs">
+      <DependentUpon>VerDetalle.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -170,6 +198,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\vistasBiblioteca\Consultaraspx.aspx" />
+    <Content Include="Views\vistasBiblioteca\Eliminar.aspx" />
+    <Content Include="Views\vistasBiblioteca\Registrar.aspx" />
+    <Content Include="Views\vistasBiblioteca\VerDetalle.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
