@@ -7,12 +7,12 @@ namespace BibliotecaMVC.Models
 {
     public class Libro
     {
-        int codigo {  get; set; }
+        public string Codigo {  get; set; }
 
-        string titulo { get; set; }
+        public string Titulo { get; set; }
 
-        string autor {  get; set; }
+        public string Autor {  get; set; }
 
-        DateTime fechaPublicacion { get; set; }
+        public DateTime FechaPublicacion { get; set; }
     }
 }

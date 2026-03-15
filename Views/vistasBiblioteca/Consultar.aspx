@@ -15,13 +15,14 @@
 
     <br /><br />
 
+    <asp:Label ID="lblMensaje" runat="server" />
+
     <!-- GridView para mostrar los libros -->
     <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Codigo" HeaderText="Código" />
             <asp:BoundField DataField="Titulo" HeaderText="Título" />
             <asp:BoundField DataField="Autor" HeaderText="Autor" />
-            <asp:BoundField DataField="Editorial" HeaderText="Editorial" />
             <asp:BoundField DataField="FechaPublicacion" HeaderText="Fecha Publicación" DataFormatString="{0:yyyy-MM-dd}" />
         </Columns>
     </asp:GridView>
