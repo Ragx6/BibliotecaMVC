@@ -20,9 +20,16 @@
         <Columns>
             <asp:BoundField DataField="Codigo" HeaderText="Código" />
             <asp:BoundField DataField="Titulo" HeaderText="Título" />
-            <asp:BoundField DataField="Autor" HeaderText="Autor" />
+            <asp:TemplateField HeaderText="Acciones">
+    <ItemTemplate>
+        <asp:Button ID="btnVerDetalles" runat="server" Text="Ver detalles" 
+            CommandName="Ver" 
+            CommandArgument='<%# Container.DataItemIndex %>' 
+            CssClass="btn-ver" />
+    </ItemTemplate>
+</asp:TemplateField>
             <asp:BoundField DataField="Editorial" HeaderText="Editorial" />
-            <asp:BoundField DataField="FechaPublicacion" HeaderText="Fecha Publicación" DataFormatString="{0:yyyy-MM-dd}" />
+            
         </Columns>
     </asp:GridView>
 </asp:Content>

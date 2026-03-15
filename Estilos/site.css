@@ -1,12 +1,13 @@
-﻿body {
+﻿
+body {
     max-width: 980px;
     margin: 20px auto;
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background: #fffaf0; /* Fondo 
+    background: #fffaf0; /* Fondo crema suave */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #111; /* Letras 
+    color: #111; /* Letras negras para mejor lectura */
 }
 
 /* Barra superior de navegación */
@@ -15,6 +16,7 @@
     color: #fff;
     padding: 12px 18px;
     border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
 }
 
     .topbar a {
@@ -25,10 +27,10 @@
     }
 
         .topbar a:hover {
-            color: #f6ad55; /* Efecto cálido*/
+            color: #f6ad55; /* Efecto cálido al pasar el mouse */
         }
 
-/* Inputs mejorados */
+
 input[type=text],
 input[type=date],
 select {
@@ -40,7 +42,7 @@ select {
     border-radius: 8px;
     background: #fff;
     font-size: 15px;
-    color: #111; /* Texto negro */
+    color: #111;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
@@ -52,12 +54,40 @@ select {
         outline: none;
     }
 
-/* Botones */
-button, .btn {
+
+.tabla-minimalista {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .tabla-minimalista th {
+        background: #2d3748; /* Azul oscuro como la topbar */
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .tabla-minimalista td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tabla-minimalista tr:hover {
+        background-color: #fef3e2; /* Resalte sutil al pasar el mouse */
+    }
+
+/* Botón general y de registro */
+button, .btn, .btn-registrar {
     padding: 12px 16px;
     border: none;
     background: #f6ad55;
-    color: #111; /* Texto negro para contraste */
+    color: #111;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
@@ -67,4 +97,52 @@ button, .btn {
     button:hover, .btn:hover {
         background: #dd6b20;
         transform: scale(1.05);
+    }
+
+/* Botón específico para la tabla (más pequeño) */
+.btn-ver {
+    padding: 6px 12px;
+    background: #f6ad55;
+    color: #111;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+    .btn-ver:hover {
+        background: #dd6b20;
+    }
+
+
+.panel-detalles {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid #f6ad55;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .panel-detalles h3 {
+        margin-top: 0;
+        color: #2d3748;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+.btn-cerrar {
+    background: #e53e3e !important; /* Rojo para cancelar/cerrar */
+    color: white !important;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+    .btn-cerrar:hover {
+        background: #c53030 !important;
     }
