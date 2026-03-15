@@ -7,15 +7,23 @@
      <h2>Registrar Libro</h2>
 
     <asp:Label runat="server" AssociatedControlID="txtCodigo" Text="Código:" />
+    <br />
     <asp:TextBox ID="txtCodigo" runat="server" />
+    <br />
 
     <asp:Label runat="server" AssociatedControlID="txtTitulo" Text="Título:" />
+    <br />
     <asp:TextBox ID="txtTitulo" runat="server" />
+    <br />
 
     <asp:Label runat="server" AssociatedControlID="txtAutor" Text="Autor:" />
+    <br />
     <asp:TextBox ID="txtAutor" runat="server" />
+    <br />
+
 
     <asp:Label runat="server" AssociatedControlID="txtFecha" Text="Fecha publicación (yyyy-mm-dd):" />
+    <br />
     <asp:TextBox ID="txtFecha" runat="server" />
 
     <br />
