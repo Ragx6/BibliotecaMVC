@@ -13,5 +13,10 @@ namespace BibliotecaMVC.Views.vistasBiblioteca
         {
 
         }
+
+        protected void gvLibros_RowCommand(object sender, GridViewCommandEventArgs e) 
+        {
+
+        }
     }
 }
