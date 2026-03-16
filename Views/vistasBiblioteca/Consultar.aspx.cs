@@ -56,5 +56,21 @@ namespace BibliotecaMVC.Views.vistasBiblioteca
 
             
         }
+        protected void gvLibros_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+
+            if (e.CommandName == "Ver")
+            {
+                string codigo = gvLibros.DataKeys[index].Value.ToString();
+                // Aquí implementas la lógica para mostrar detalles del libro
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                string codigo = gvLibros.DataKeys[index].Value.ToString();
+                // Aquí implementas la lógica para eliminar el libro
+            }
+
+        }
     }
-}
+    }

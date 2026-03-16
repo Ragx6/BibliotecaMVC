@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteMaster.Master" AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="BibliotecaMVC.Views.vistasBiblioteca.Consultaraspx" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteMaster.Master" AutoEventWireup="true" CodeBehind="Consultar.aspx.cs" Inherits="BibliotecaMVC.Views.vistasBiblioteca.Consultaraspx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<<<<<<< Updated upstream
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+=======
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Consultar Libros</h2> <!-- Encabezado -->
 
@@ -15,16 +18,30 @@
 
     <br /><br />
 
-    <asp:Label ID="lblMensaje" runat="server" />
+   <asp:Label ID="lblMensaje" runat="server" />
+    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false"
+    OnRowCommand="gvLibros_RowCommand" DataKeyNames="Codigo">
+    <Columns>
+        <asp:BoundField DataField="Codigo" HeaderText="Código" />
+        <asp:BoundField DataField="Titulo" HeaderText="Título" />
+        <asp:BoundField DataField="Autor" HeaderText="Autor" />
+        <asp:BoundField DataField="FechaPublicacion" HeaderText="Fecha Publicación" DataFormatString="{0:yyyy-MM-dd}" />
 
-    <!-- GridView para mostrar los libros -->
-    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false">
-        <Columns>
-            <asp:BoundField DataField="Codigo" HeaderText="Código" />
-            <asp:BoundField DataField="Titulo" HeaderText="Título" />
-            <asp:BoundField DataField="Autor" HeaderText="Autor" />
-            <asp:BoundField DataField="FechaPublicacion" HeaderText="Fecha Publicación" DataFormatString="{0:yyyy-MM-dd}" />
-        </Columns>
-    </asp:GridView>
-</asp:Content>
+        
+        <asp:TemplateField HeaderText="Acciones">
+            <ItemTemplate>
+                <!-- Botón Ver Detalles -->
+                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver detalles"
+                    CommandName="Ver"
+                    CommandArgument='<%# Container.DataItemIndex %>' />
+
+                <!-- Botón Eliminar -->
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar"
+                    CommandName="Eliminar"
+                    CommandArgument='<%# Container.DataItemIndex %>'
+                    OnClientClick="return confirm('¿Seguro que deseas eliminar este libro?');" />
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
            
