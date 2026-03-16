@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//Prueba Gridview
+//Version final
 namespace BibliotecaMVC.Views.vistasBiblioteca
 {
     public partial class Consultaraspx : System.Web.UI.Page
