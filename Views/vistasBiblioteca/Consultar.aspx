@@ -15,32 +15,15 @@
 
     <br /><br />
 
-   
-           <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false"
-    OnRowCommand="gvLibros_RowCommand" DataKeyNames="Codigo">
-    <Columns>
-        <asp:BoundField DataField="Codigo" HeaderText="Código" />
-        <asp:BoundField DataField="Titulo" HeaderText="Título" />
-        <asp:BoundField DataField="Editorial" HeaderText="Editorial" />
 
-        
-        <asp:TemplateField HeaderText="Acciones">
-            <ItemTemplate>
-                <!-- Botón Ver Detalles -->
-                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver detalles"
-                    CommandName="Ver"
-                    CommandArgument='<%# Container.DataItemIndex %>' />
-
-                <!-- Botón Eliminar -->
-                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar"
-                    CommandName="Eliminar"
-                    CommandArgument='<%# Container.DataItemIndex %>'
-                    OnClientClick="return confirm('¿Seguro que deseas eliminar este libro?');" />
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
-
-
+    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false"
+    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="Codigo" HeaderText="Código" />
+            <asp:BoundField DataField="Titulo" HeaderText="Título" />
+            <asp:BoundField DataField="Autor" HeaderText="Autor" />
+            <asp:BoundField DataField="FechaPublicacion" HeaderText="Fecha Publicación" DataFormatString="{0:yyyy-MM-dd}" />
+        </Columns>
+    </asp:GridView>
 </asp:Content>
            
