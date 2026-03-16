@@ -4,9 +4,7 @@
     padding: 16px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background: #fffaf0; /* Fondo 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #111; /* Letras 
+    background: #fffaf0;
 }
 
 /* Barra superior de navegación */
@@ -68,3 +66,30 @@ button, .btn {
         background: #dd6b20;
         transform: scale(1.05);
     }
+.styled-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+    .styled-grid th {
+        background: #2d3748; /* mismo tono que la topbar */
+        color: #fff;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .styled-grid td {
+        background: #fffaf0; /* mismo fondo cálido */
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .styled-grid tr:hover td {
+        background: #fef5e7; /* efecto hover suave */
+    }
+
