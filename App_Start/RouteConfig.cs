@@ -1,23 +1,37 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.AspNet.FriendlyUrls;
 
 namespace BibliotecaMVC
 {
-    public class RouteConfig
+    public static class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            var settings = new FriendlyUrlSettings();
+            settings.AutoRedirectMode = RedirectMode.Permanent;
+            routes.EnableFriendlyUrls(settings);
+
+            routes.MapPageRoute(
+                routeName:"RegistrarLibros",
+                routeUrl:"vistasBiblioteca/Registrar",
+                physicalFile: "~/Views/vistasBiblioteca/Registrar.aspx"
+                );
+
+            routes.MapPageRoute(
+                routeName: "ConsultarLibros",
+                routeUrl: "vistasBiblioteca/Consultar",
+                physicalFile: "~/Views/vistasBiblioteca/Consultar.aspx"
+                );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                );
         }
     }
 }

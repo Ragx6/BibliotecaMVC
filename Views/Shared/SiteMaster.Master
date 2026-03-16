@@ -4,15 +4,25 @@
 
 <html>
 <head runat="server">
+    <meta charset="utf-8" />
     <title>Biblioteca</title>
+    <link href="../../Estilos/site.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="topbar" runat="server">
+            <a id ="lnkRegistrar" runat="server" href="~/Views/vistasBiblioteca/Registrar.aspx">Registrar Libros</a>
+
+            <a id="lnkConsultar" runat="server" href="~/Views/vistasBiblioteca/Consultar.aspx">Consultar Libros</a>
+        </div>
+
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
         </div>
     </form>
 </body>
