@@ -15,9 +15,8 @@
 
     <br /><br />
 
-    <asp:Label ID="lblMensaje" runat="server" />
 
-    <!-- GridView para mostrar los libros -->
+    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false"
     <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false">
         <Columns>
             <asp:BoundField DataField="Codigo" HeaderText="Código" />
