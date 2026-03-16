@@ -66,7 +66,21 @@ namespace BibliotecaMVC.Controllers
             return encontrado;
         }
 
+        public void Eliminar(string codigo) 
+        {
+            var encontrado = _Libros.FirstOrDefault(m => m.Codigo.Trim().ToUpper() == codigo.Trim().ToUpper());
 
+            if (encontrado != null) 
+            {
+                _Libros.Remove(encontrado);
+            }
+
+            else 
+            {
+                throw new Exception("No se encontro un libro para poder eliminar");
+            }
+            
+        }
 
     }
 }

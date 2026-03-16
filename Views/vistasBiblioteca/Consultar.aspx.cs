@@ -1,9 +1,11 @@
 ﻿using BibliotecaMVC.Controllers;
 using BibliotecaMVC.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 //Prueba Gridview
@@ -14,7 +16,11 @@ namespace BibliotecaMVC.Views.vistasBiblioteca
         private readonly LibroController _controller = new LibroController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarLibros();
+            if (!IsPostBack) 
+            {
+                CargarLibros();
+            }
+            
         }
 
         private void CargarLibros(string filtroCodigo = null) 
@@ -62,13 +68,36 @@ namespace BibliotecaMVC.Views.vistasBiblioteca
 
             if (e.CommandName == "Ver")
             {
-                string codigo = gvLibros.DataKeys[index].Value.ToString();
-                // Aquí implementas la lógica para mostrar detalles del libro
+                GridViewRow fila = gvLibros.Rows[index];
+
+                string codigo = fila.Cells[0].Text;
+                string titulo = fila.Cells[1].Text;
+                string autor = gvLibros.DataKeys[index]["Autor"].ToString();
+                string fecha = gvLibros.DataKeys[index]["FechaPublicacion"].ToString();
+
+                pnlDetalles.Visible = true;
+                lblDetalles.Text = $"<strong>Detalles del libro:</strong><br/>" + $"Codigo: {codigo}<br/>" + $"Titulo: {titulo}<br/>" + $"Autor: {autor}<br/>" + $"Fecha: {fecha}";
+
+
             }
             else if (e.CommandName == "Eliminar")
             {
+
+
+                
+
                 string codigo = gvLibros.DataKeys[index].Value.ToString();
-                // Aquí implementas la lógica para eliminar el libro
+                _controller.Eliminar(codigo);
+                var librosEncontrados = _controller.ObtenerLibros(txtFiltro.Text.Trim());
+
+                pnlDetalles.Visible= false;
+                lblMensaje.Text = null;
+                gvLibros.DataSource = librosEncontrados;
+                gvLibros.DataBind();
+
+                
+
+
             }
 
         }
