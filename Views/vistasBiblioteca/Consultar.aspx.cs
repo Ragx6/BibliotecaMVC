@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//Prueba Estilos
+//Prueba Gridview
 namespace BibliotecaMVC.Views.vistasBiblioteca
 {
     public partial class Consultaraspx : System.Web.UI.Page
