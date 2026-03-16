@@ -23,5 +23,21 @@ namespace BibliotecaMVC.Views.vistasBiblioteca
         {
 
         }
+        protected void gvLibros_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
+            if (e.CommandName == "Seleccionar")
+            {
+                
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow fila = gvLibros.Rows[index];
+
+               
+                string codigo = fila.Cells[0].Text;
+                
+            }
+        }
+
+
     }
 }

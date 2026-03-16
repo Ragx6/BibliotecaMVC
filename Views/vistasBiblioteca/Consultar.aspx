@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Consultar Libros</h2> <!-- Encabezado -->
+        <h2>Consultar Libros</h2> <!-- Encabezado -->
 
     <!-- Campo de filtro por código o título -->
     <asp:Label runat="server" AssociatedControlID="txtFiltro" Text="Filtrar por código o título:" />
@@ -15,22 +15,30 @@
 
     <br /><br />
 
-    <!-- GridView para mostrar los libros -->
-    <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false">
-        <Columns>
-            <asp:BoundField DataField="Codigo" HeaderText="Código" />
-            <asp:BoundField DataField="Titulo" HeaderText="Título" />
-            <asp:TemplateField HeaderText="Acciones">
-    <ItemTemplate>
-        <asp:Button ID="btnVerDetalles" runat="server" Text="Ver detalles" 
-            CommandName="Ver" 
-            CommandArgument='<%# Container.DataItemIndex %>' 
-            CssClass="btn-ver" />
-    </ItemTemplate>
-</asp:TemplateField>
-            <asp:BoundField DataField="Editorial" HeaderText="Editorial" />
-            
-        </Columns>
-    </asp:GridView>
-</asp:Content>
-           
+   
+           <asp:GridView ID="gvLibros" runat="server" AutoGenerateColumns="false"
+    OnRowCommand="gvLibros_RowCommand" DataKeyNames="Codigo">
+    <Columns>
+        <asp:BoundField DataField="Codigo" HeaderText="Código" />
+        <asp:BoundField DataField="Titulo" HeaderText="Título" />
+        <asp:BoundField DataField="Editorial" HeaderText="Editorial" />
+
+        
+        <asp:TemplateField HeaderText="Acciones">
+            <ItemTemplate>
+                <!-- Botón Ver Detalles -->
+                <asp:Button ID="btnVerDetalles" runat="server" Text="Ver detalles"
+                    CommandName="Ver"
+                    CommandArgument='<%# Container.DataItemIndex %>' />
+
+                <!-- Botón Eliminar -->
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar"
+                    CommandName="Eliminar"
+                    CommandArgument='<%# Container.DataItemIndex %>'
+                    OnClientClick="return confirm('¿Seguro que deseas eliminar este libro?');" />
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>
+    </asp:Content>
+       
