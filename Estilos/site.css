@@ -1,3 +1,96 @@
 ﻿body {
-
+    max-width: 980px;
+    margin: 20px auto;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fffaf0;
 }
+
+/* Barra superior de navegación */
+.topbar {
+    background: #2d3748;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px 10px 0 0;
+}
+
+    .topbar a {
+        color: #fff;
+        margin-right: 14px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .topbar a:hover {
+            color: #f6ad55; /* Efecto cálido*/
+        }
+
+/* Inputs mejorados */
+input[type=text],
+input[type=date],
+select {
+    width: 50%;
+    padding: 12px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 15px;
+    color: #111; /* Texto negro */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+    input:focus,
+    select:focus {
+        border-color: #f6ad55;
+        box-shadow: 0 0 6px rgba(246,173,85,0.6);
+        outline: none;
+    }
+
+/* Botones */
+button, .btn {
+    padding: 12px 16px;
+    border: none;
+    background: #f6ad55;
+    color: #111; /* Texto negro para contraste */
+    border-radius: 8px;
+    font: inherit;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    button:hover, .btn:hover {
+        background: #dd6b20;
+        transform: scale(1.05);
+    }
+.styled-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+    .styled-grid th {
+        background: #2d3748; /* mismo tono que la topbar */
+        color: #fff;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .styled-grid td {
+        background: #fffaf0; /* mismo fondo cálido */
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .styled-grid tr:hover td {
+        background: #fef5e7; /* efecto hover suave */
+    }
+
